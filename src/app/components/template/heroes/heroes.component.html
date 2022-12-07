@@ -1,4 +1,17 @@
-<div *ngFor="let hero of heroes">
-<p >{{ hero.name }}</p>
-<img src="{{ chamarImg(hero.thumbnail.path) }}" alt="imagem">
+<div class="wallpaper">
+  <div></div>
+</div>
+
+<div *ngFor="let hero of heroes" style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
+        <mat-card class="example-card">
+            <mat-card-header style="display: flex; align-items: center; justify-content: center;">
+              <mat-card-title>{{ hero.name }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{ chamarImg(hero.thumbnail.path) }}" alt="heroeImg">
+            <mat-card-content>
+              <p>
+                {{ hero.description }}
+              </p>
+            </mat-card-content>
+          </mat-card>
 </div>

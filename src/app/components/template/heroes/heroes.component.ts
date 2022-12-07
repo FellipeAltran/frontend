@@ -16,7 +16,7 @@ export class HeroesComponent {
   md5: string = "bd958ccd0d34840a9af2999cfa9746cf";
   baseUrl: string = "https://gateway.marvel.com:443/v1/public"
 
-  heroes: Array<Heroe> = []
+  heroes: Array<Heroe> = [];
 
   ngOnInit(): void {
     this.readResults();
@@ -27,7 +27,12 @@ export class HeroesComponent {
     const json = await response.json();
     console.log(json)
     const results = json.data.results; 
-    this.heroes = results;
+    
+    results.forEach((element: any) => {
+      if(!element.thumbnail.path.includes('image_not_available') && (element.description != '')){
+        this.heroes.push(element)
+      }
+    });
   }
 
   chamarImg(img: string) {

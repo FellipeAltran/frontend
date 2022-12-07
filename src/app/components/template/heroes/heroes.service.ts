@@ -7,11 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class HeroesService {
 
- 
-
   constructor() { 
    }
-
-  
-
 }
