@@ -1,7 +1,36 @@
 .example-card {
   max-width: 300px;
+  /* min-height: 300px; */
+  background-color: #202020;
+  color: white;
 }
 
 .wallpaper {
-  background-image: url("../../../../assets/wallpaper.jpg");
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../../../assets/Newallpaper.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+@media only screen and (max-width: 480px) {
+ 
+}
+
+.frase {
+  background-color: rgba(15, 15, 15, 0.397);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 40%;
+  color: white;
+}
+
+.frase h1 {
+  margin: 20px;
 }
