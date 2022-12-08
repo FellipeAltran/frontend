@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.boxOneFooter {
+    display: flex;
+    border: solid 3px black;
+}
+
+.boxTwoFooter {
+    display: flex;
+    border: solid 3px black;
+}

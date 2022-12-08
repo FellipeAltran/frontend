@@ -11,21 +11,18 @@ export class HeroesComponent {
 
   constructor(private service: HeroesService) { }
 
-  publicKey: string = "775233114571f81211798b1261dda709";
-  timeStamp: string = "1669893071";
-  md5: string = "bd958ccd0d34840a9af2999cfa9746cf";
-  baseUrl: string = "https://gateway.marvel.com:443/v1/public"
-
   heroes: Array<Heroe> = [];
+
+  offset: number = 0;
 
   ngOnInit(): void {
     this.readResults();
   }
 
-  async readResults(){
-    const response = await fetch(`${this.baseUrl}/characters?ts=${this.timeStamp}&apikey=${this.publicKey}&hash=${this.md5}`); 
+  async readResults(){ 
+    const response = await this.service.makeUrl(this.offset);
     const json = await response.json();
-    console.log(json)
+    console.log(json);
     const results = json.data.results; 
     
     results.forEach((element: any) => {
@@ -34,6 +31,13 @@ export class HeroesComponent {
       }
     });
   }
+
+  callMoreHeroes(){
+    this.offset = this.offset + 20;
+    console.log('fjndfln')
+    this.readResults();
+  }
+
 
   chamarImg(img: string) {
     const urlImg = `${img}/portrait_medium.jpg`;
