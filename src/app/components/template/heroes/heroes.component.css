@@ -1,21 +1,8 @@
-.example-card {
+/* .example-card {
   max-width: 300px;
   min-height: 300px;
   background-color: #202020;
   color: white;
-}
-
-.wallpaper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 99vh;
-  background-image: url("../../../../assets/Newallpaper.jpg");
-  background-size: auto;
-  background-repeat: no-repeat;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
 }
 
 .frase {
@@ -29,10 +16,74 @@
 
 .frase h1 {
   margin: 20px;
+} */
+
+/* .container1 {
+  display: grid;
+  grid-template-areas:
+    "wallpaper"
+    "hereos"
+    "button";
+  border: solid 3px black;
+} */
+
+/* .wallpaper {
+  grid-area: "wallpaper";
+  height: 40rem;
+  padding: 0;
+  background-image: url("../../../../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+} */
+
+.container2 {
+  display: grid;
+  max-width: 1800px;
+  margin: 0 auto;
+  justify-items: center;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  width: 350px;
+  height: 350px;
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr 2fr;
+  color: white;
+  background-color: #202020;
+  border: solid 3px #030202;
+  border-radius: 15px;
+  box-shadow: 4px 5px 5px 1px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: 4px 5px 5px 1px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: 4px 5px 5px 1px rgba(0, 0, 0, 0.27);
+  margin-top: 30px;
+}
+
+.card :not(last-child) {
+  padding: 10px;
+}
+
+.card :last-child {
+  overflow-y: auto;
+}
+
+.card img {
+  margin: 0 auto;
+}
+
+.card p {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .divButton {
-  display: flex;
+  display: grid;
+  grid-area: "button";
   justify-content: center;
   margin-top: 5vh;
   margin-bottom: 5vh;
@@ -48,10 +99,31 @@
 
 .button:hover {
   border: none;
-  border-radius: 20px;  
+  border-radius: 20px;
   box-shadow: -9px 8px 22px -5px rgba(92, 80, 80, 0.75);
   -webkit-box-shadow: -9px 8px 22px -5px rgba(92, 80, 80, 0.75);
   -moz-box-shadow: -9px 8px 22px -5px rgba(92, 80, 80, 0.75);
   background-color: #800000;
 
+}
+
+@media (max-width: 1750px){
+  .container2 {
+    max-width: 1300px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 1200px){
+  .container2 {
+    max-width: 800px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 840px){
+  .container2 {
+    max-width: 400px;
+    grid-template-columns: 1fr;
+  }
 }

@@ -34,7 +34,6 @@ export class HeroesComponent {
 
   callMoreHeroes(){
     this.offset = this.offset + 20;
-    console.log('fjndfln')
     this.readResults();
   }
 
