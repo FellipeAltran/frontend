@@ -1,29 +1,21 @@
-<!-- <div class="container1"> -->
-<!-- 
-    <div class="wallpaper">
-      <div class="frase">
-        <h1>BEM VINDO A MINHA PAGINA Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis unde incidunt
-          dolorem quod consectetur iusto officiis nihil nulla minus necessitatibus totam, corrupti inventore officia,
-          nisi
-          quisquam debitis quidem odio ex.</h1>
-      </div>
-    </div> -->
-
-  <section class="container2">
-
-    <ng-container *ngFor="let hero of heroes">
-      <div class="card">
-        <p>{{ hero.name }}</p>
-        <img mat-card-image src="{{ chamarImg(hero.thumbnail.path) }}" alt="heroeImg">
-        <p>{{ hero.description }}</p>
-      </div>
-    </ng-container>
-
-  </section>
-
-
-  <div class="divButton">
-    <button (click)="callMoreHeroes()" class="button">more</button>
+<div class="container1">
+  <div class="wallpaper">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, optio cum culpa quia iste doloribus laborum,
+      amet dicta excepturi eum sapiente quos cupiditate iusto accusamus eveniet! Sapiente, quis cupiditate!
+      Voluptatibus?</p>
   </div>
+</div>
 
-<!-- </div> -->
+<section class="container2">
+  <ng-container *ngFor="let hero of heroes">
+    <div class="card">
+      <p>{{ hero.name }}</p>
+      <img mat-card-image src="{{ chamarImg(hero.thumbnail.path) }}" alt="heroeImg">
+      <p>{{ hero.description }}</p>
+    </div>
+  </ng-container>
+</section>
+
+<div class="divButton">
+  <button (click)="callMoreHeroes()" class="button">more</button>
+</div>

@@ -13,30 +13,40 @@ export class HeroesComponent {
 
   heroes: Array<Heroe> = [];
 
+  aux: number = 0;
+  index: number = 0;
+
   offset: number = 0;
 
   ngOnInit(): void {
     this.readResults();
   }
 
-  async readResults(){ 
-    const response = await this.service.makeUrl(this.offset);
-    const json = await response.json();
-    console.log(json);
-    const results = json.data.results; 
-    
-    results.forEach((element: any) => {
-      if(!element.thumbnail.path.includes('image_not_available') && (element.description != '')){
-        this.heroes.push(element)
-      }
-    });
+  async readResults() {
+    this.aux = 0;
+
+    do {
+      console.log(this.offset)
+      const response = await this.service.makeUrl(this.offset);
+      const json = await response.json();
+      const results = json.data.results;
+
+      let index = 0;
+      do {
+        if (!results[index].thumbnail.path.includes('image_not_available') && (results[index].description != '')) {
+          this.heroes.push(results[index]);
+          this.aux++;
+        }
+        index++;
+      } while (this.aux != 4 && index <= 19);
+      this.offset = this.offset + index;
+
+    } while (this.aux != 4);
   }
 
-  callMoreHeroes(){
-    this.offset = this.offset + 20;
+  callMoreHeroes() {
     this.readResults();
   }
-
 
   chamarImg(img: string) {
     const urlImg = `${img}/portrait_medium.jpg`;
