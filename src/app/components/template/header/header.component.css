@@ -1,4 +1,7 @@
 .logo {
+    display: block;
     width: 300px;
     height: 100px;
+    border-left: solid 1px #393939;
+    border-right: solid 1px #393939;
 }

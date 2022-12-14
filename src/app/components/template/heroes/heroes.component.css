@@ -17,14 +17,13 @@
 }
 
 .wallpaper {
-  grid-area: "wallpaper";
   padding: 0;
-  width: 100%;
   height: 436px;
   background-size: cover;
   background-image: url("../../../../assets/background.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
+  background-attachment: fixed;
   margin-top: 3vh;
   margin-bottom: 3vh;
 }
@@ -36,7 +35,7 @@
   align-items: stretch;
   width: 40%;
   color: white;
-} 
+}
 
 .container2 {
   display: grid;
@@ -95,6 +94,8 @@
   border-radius: 20px;
   margin-top: 5vh;
   margin-bottom: 10vh;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -107,26 +108,60 @@
 
 }
 
-@media (max-width: 1750px){
+@media (max-width: 1750px) {
+
+  /* .card {
+    height: 325px;
+    width: 325px;
+  }
+
+  .wallpaper {
+    height: 45vh;
+  } */
+
   .container2 {
     max-width: 1300px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media (max-width: 1200px){
-
-  .wallpaper{
-    height: 40vh;
+@media (max-width: 1200px) {
+  /* 
+  .card {
+    height: 300px;
+    width: 300px;
   }
-  
+
+  .card img {
+    height: 100px;
+    width: 75px;
+  }
+
+  .wallpaper {
+    height: 40vh;
+  } */
+
   .container2 {
     max-width: 800px;
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 840px){
+@media (max-width: 840px) {
+
+  /* .card {
+    height: 300px;
+    width: 275px;
+  }
+
+  .card img {
+    height: 125px;
+    width: 100px;
+  }
+
+  .wallpaper {
+    height: 35vh;
+  } */
 
   .container2 {
     max-width: 400px;

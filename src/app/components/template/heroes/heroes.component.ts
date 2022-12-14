@@ -14,6 +14,7 @@ export class HeroesComponent {
   heroes: Array<Heroe> = [];
 
   aux: number = 0;
+  
   index: number = 0;
 
   offset: number = 0;
@@ -26,6 +27,7 @@ export class HeroesComponent {
     this.aux = 0;
 
     do {
+
       console.log(this.offset)
       const response = await this.service.makeUrl(this.offset);
       const json = await response.json();
